@@ -1,0 +1,32 @@
+.Gallery {
+  columns: 1;
+  margin-top: 24px;
+
+  @media only screen and (min-width: 600px) {
+    columns: 2;
+    column-gap: 40px;
+  }
+
+  @media only screen and (min-width: 768px) {
+    columns: 3;
+    margin-top: 40px;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    columns: 4;
+  }
+
+  .thumbnail {
+    width: 100%;
+    margin-bottom: 24px;
+
+    @media only screen and (min-width: 768px) {
+      margin-bottom: 36px;
+      max-width: 310px;
+    }
+
+    .image {
+      width: 100%;
+    }
+  }
+}

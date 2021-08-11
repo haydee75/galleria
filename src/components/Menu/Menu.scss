@@ -1,0 +1,46 @@
+.Menu {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 23px;
+
+  &:after {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: 0;
+    height: 1px;
+    background: var(--grey);
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+
+    @media only screen and (min-width: 768px) {
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+
+  @media only screen and (min-width: 375px) {
+    padding-bottom: 27px;
+  }
+
+  @media only screen and (min-width: 768px) {
+    padding-bottom: 40px;
+  }
+
+  .title {
+    .logo {
+      background: url("../../assets/shared/logo.svg");
+      background-size: cover;
+      width: 113.04px;
+      height: 32px;
+      display: block;
+
+      @media only screen and (min-width: 768px) {
+        width: 169.56px;
+        height: 48px;
+      }
+    }
+  }
+}

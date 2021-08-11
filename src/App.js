@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import data from "./data.json";
+import "./App.scss";
+import { Switch, Route } from "react-router-dom";
+import Menu from "./components/Menu/Menu";
+import Gallery from "./components/Gallery/Gallery";
+import Paint from "./components/Paint/Paint";
+import { useState } from "react";
 
-function App() {
+const App = () => {
+  data.forEach((d) => {
+    d["urlPath"] = d.name.replace(/\s/g, "-");
+  });
+
+  const [slideShow, setSlideShow] = useState(true);
+
+  const handleSlideShow = () => {
+    setSlideShow(!slideShow);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <Menu datas={data} clickEvent={handleSlideShow} slideShow={slideShow} />
+        <Switch>
+          <Route exact path="/">
+            <Gallery datas={data} clickEvent={handleSlideShow} />
+          </Route>
+          <Route path="/:urlPath">
+            <Paint datas={data} />
+          </Route>
+        </Switch>
+      </div>
     </div>
   );
-}
+};
 
 export default App;

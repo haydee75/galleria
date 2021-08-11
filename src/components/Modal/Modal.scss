@@ -1,0 +1,42 @@
+.Modal {
+  position: fixed;
+  background-color: rgba(1, 1, 1, 0.9);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+
+  .wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .close-modal {
+      display: flex;
+      justify-content: flex-end;
+      height: 58px;
+
+      span {
+        cursor: pointer;
+        color: var(--white);
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 17px;
+        letter-spacing: 3px;
+        opacity: 1;
+        transition: opacity 0.1s ease-in;
+
+        &:hover {
+          opacity: 0.25;
+        }
+      }
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}
