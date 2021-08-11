@@ -7,7 +7,7 @@ const Gallery = ({ datas, clickEvent }) => {
       {datas.map((data, index) => {
         return (
           <div key={index} className="thumbnail">
-            <Link to={"/" + data.urlPath} onClick={clickEvent}>
+            <Link to={"/galleria/" + data.urlPath} onClick={clickEvent}>
               <img
                 className="image"
                 src={data.images.thumbnail}

@@ -8,7 +8,7 @@ const Menu = ({ datas, clickEvent, slideShow }) => {
         <span className="logo"></span>
       </h1>
       <div className="action" onClick={clickEvent}>
-        <Link to={slideShow ? `/${datas[0].urlPath}` : "/"}>
+        <Link to={slideShow ? `/galleria/${datas[0].urlPath}` : "/galleria/"}>
           <span className="link-primary">
             {slideShow ? "Show slideshow" : "Stop slideshow"}
           </span>

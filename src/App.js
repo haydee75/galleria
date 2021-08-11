@@ -22,10 +22,10 @@ const App = () => {
       <div>
         <Menu datas={data} clickEvent={handleSlideShow} slideShow={slideShow} />
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/galleria">
             <Gallery datas={data} clickEvent={handleSlideShow} />
           </Route>
-          <Route path="/:urlPath">
+          <Route path="/galleria/:urlPath">
             <Paint datas={data} />
           </Route>
         </Switch>
